@@ -102,8 +102,8 @@ def flood
 end
 
 def start
-    puts "Welcome to planet Wars. An epic adventure where you have to save the solar system planet by planet.
-    Your task is to save all the planets before you run out of lives, are you ready to give it a go?"
+    puts "Welcome to planet Wars. An epic adventure where you have to save the solar system planet by planet."
+    puts "Your task is to save all the planets before you run out of lives, are you ready to give it a go?"
     
     print "> "
     choice = $stdin.gets.chomp
