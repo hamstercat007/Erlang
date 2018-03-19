@@ -1,6 +1,12 @@
+@tools = []
 
 def prompt()
     print "> "
+end
+
+def tools()
+    puts "You have the following tools available:"
+    puts @tools
 end
 
 def earth
@@ -68,8 +74,8 @@ def erlang
 end
 
 def planetchoice
-    puts "You go up into Elon Musk's Space X aircraft to the unchartered planet Erlang"
-    puts "Do you decide to land on planet Erlang or do you go back to planet Earth?"
+    puts "You must first decide which planet to save"
+    puts "Do you decide to land on planet Erlang, save saturn or do you remain on  planet Earth?"
     
     prompt;
     choice = $stdin.gets.chomp
@@ -78,9 +84,36 @@ def planetchoice
         erlang
         elsif choice.include?("Earth") || choice.include?("earth")
         earth
+        elsif choice.include?("Saturn") || choice.include?("saturn")
+        saturn
         else
         dead("You float around aimlessly in space and run out of oxygen, and die.")
     end
+end
+
+def saturn
+    puts "Welcome to Saturn. The rings of Saturn are the most extensive ring system of any planet in the Solar System. They consist of countless small particles."
+    sleep 2 #seconds
+    puts "Your job if you choose to save this planet is to save the rings of Saturn. Do you accept?"
+    
+    prompt;
+    savesaturn = $stdin.gets.chomp
+    
+    if savesaturn.include?("Yes") || savesaturn.include?("yes")
+        saturnrings
+        elsif savesaturn.include?("No") || savesaturn.include?("no")
+        planetchoice
+        else
+        dead ("You could not decided if saturn should be saved and therefore ran out of oxygen. You die")
+    end
+end
+
+def saturnrings
+    puts "You made a brave choice to save the rings of saturn"
+    puts "I hope you packed your spacesuit, to save the rings of Saturn you must orbit the planet along the rings"
+    puts "Unlike earth Saturn has many moons so watch out they don't hit you"
+    
+    
 end
 
 def nostart
