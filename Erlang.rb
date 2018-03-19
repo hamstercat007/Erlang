@@ -1,4 +1,7 @@
 
+def prompt()
+    print "> "
+end
 
 def earth
     puts "Cold War II has erupted between Russia and the United States"
@@ -7,7 +10,7 @@ def earth
     puts "Do you still stay on planet Earth, or do you go to planet Erlang in Elon Musk's SpaceX?"
     
     while true
-        print "> "
+        prompt;
         choice2 = $stdin.gets.chomp
         
         if choice2.include?("Earth") || choice2.include?("earth")
@@ -29,7 +32,7 @@ def erlang
     puts "It is customary for strangers to give the Erlangers a gift"
     puts "What do you give them as a gift, your monkey or the apples"
     
-    print "> "
+    prompt;
     gift = $stdin.gets.chomp
     
     if gift.include?("monkey") || gift.include?("Monkey")
@@ -46,7 +49,7 @@ def erlang
         
         #I Initially put print and how_much before the while loop so it didn't work - why not?
         while true
-            print "> "
+            prompt;
             how_much = $stdin.gets.chomp.to_i
             
             
@@ -68,7 +71,7 @@ def planetchoice
     puts "You go up into Elon Musk's Space X aircraft to the unchartered planet Erlang"
     puts "Do you decide to land on planet Erlang or do you go back to planet Earth?"
     
-    print "> "
+    prompt;
     choice = $stdin.gets.chomp
     
     if choice.include?("Erlang") || choice.include?("erlang")
@@ -105,7 +108,7 @@ def start
     puts "Welcome to planet Wars. An epic adventure where you have to save the solar system planet by planet."
     puts "Your task is to save all the planets before you run out of lives, are you ready to give it a go?"
     
-    print "> "
+    prompt;
     choice = $stdin.gets.chomp
     
     if choice.include?("Yes") || choice.include?("yes")
@@ -113,7 +116,7 @@ def start
         elsif choice.include?("No") || choice.include?("no")
         nostart
         else
-        dead("You float around aimlessly in space and run out of oxygen, and die.")
+        dead("None starters get nowhere, answer yes or no next time")
     end
 end
 
