@@ -14,11 +14,11 @@ def earth
     puts "Nuclear bombs have been released and landed in your country, wiping out cities from the thermal blast"
     puts "You suffer the effects of ionising radiation and feel ill"
     puts "Do you still stay on planet Earth, or do you go to planet Erlang in Elon Musk's SpaceX?"
-    
+
     while true
         prompt;
         choice2 = $stdin.gets.chomp
-        
+
         if choice2.include?("Earth") || choice2.include?("earth")
             flood
             elsif choice2.include?("Erlang") || choice2.include?("erlang")
@@ -37,29 +37,29 @@ def erlang
     puts "The species on planet Erlang are called Erlangers"
     puts "It is customary for strangers to give the Erlangers a gift"
     puts "What do you give them as a gift, your monkey or the apples"
-    
+
     prompt;
     gift = $stdin.gets.chomp
-    
+
     if gift.include?("monkey") || gift.include?("Monkey")
         puts "How could you give away your best friend Reece!  You animal!!"
         puts "The Erlangers are surprised at your ruthlessness and place you in their jails where you die"
         puts "The monkey lives happily in luxury amongst them."
-        
+
         elsif gift.include?("apples") || gift.include?("Apples") || gift.include?("apple") || gift.include?("Apple")
         puts "How many apples do you give them?"
-        
-        
+
+
         #while loop is not comparing anything, so this is an infinite loop, which is why you need the dead method to get you out of it.
-        
-        
+
+
         #I Initially put print and how_much before the while loop so it didn't work - why not?
         while true
             prompt;
             how_much = $stdin.gets.chomp.to_i
-            
-            
-            
+
+
+
             if how_much > 3 && how_much <= 5
                 puts "That's very generous of you.  The Erlangers are pleased with your gifts"
                 puts "They take you into their palace and provide a banquet for you"
@@ -75,17 +75,20 @@ end
 
 def planetchoice
     puts "You must first decide which planet to save"
-    puts "Do you decide to land on planet Erlang, save saturn or do you remain on  planet Earth?"
-    
+    puts "Do you decide to land on planet Erlang, save saturn or do you remain on planet Earth?"
+    puts "Or would you like to go explore Jupiter? "
+
     prompt;
     choice = $stdin.gets.chomp
-    
+
     if choice.include?("Erlang") || choice.include?("erlang")
         erlang
         elsif choice.include?("Earth") || choice.include?("earth")
         earth
         elsif choice.include?("Saturn") || choice.include?("saturn")
         saturn
+      elsif choice.include?("Jupiter") || choice.include?("jupiter")
+        jupiter
         else
         dead("You float around aimlessly in space and run out of oxygen, and die.")
     end
@@ -95,10 +98,10 @@ def saturn
     puts "Welcome to Saturn. The rings of Saturn are the most extensive ring system of any planet in the Solar System. They consist of countless small particles."
     sleep 2 #seconds
     puts "Your job if you choose to save this planet is to save the rings of Saturn. Do you accept?"
-    
+
     prompt;
     savesaturn = $stdin.gets.chomp
-    
+
     if savesaturn.include?("Yes") || savesaturn.include?("yes")
         saturnrings
         elsif savesaturn.include?("No") || savesaturn.include?("no")
@@ -112,8 +115,54 @@ def saturnrings
     puts "You made a brave choice to save the rings of saturn"
     puts "I hope you packed your spacesuit, to save the rings of Saturn you must orbit the planet along the rings"
     puts "Unlike earth Saturn has many moons so watch out they don't hit you"
-    
-    
+
+end
+
+def jupiter
+  puts "Well done for being awesome in picking Jupiter"
+  puts "Looks like you've brought more than sweat to this planet, what is that smell...."
+  sleep 2
+  puts "yes yes, I'm being funny, since you've arrived on the gas giant, get it? No? Google it when you get back, if you get back muhaha"
+  puts "How do you wish to proceed in this smelly environment (bear in mind, you may not be able to breathe soon)"
+  puts "Option 1: Attack with stink bombs"
+  sleep 2
+  puts "Option 2: Run around screaming that you can't breathe"
+  sleep 2
+  puts "Or Option 3: Use the gas mask you managed to remember to bring with you"
+  sleep 2
+
+  while true
+    print ">"
+    option = $stdin.gets.chomp
+
+    if option.include?('1')
+      puts "Someone was dropped as a baby..."
+    elsif option.include?('2')
+      puts "Really? Who is that going to truly help?"
+    elsif option.include?('3')
+      puts "Aren't you smart for bringing that with you? Lucky you."
+    else
+      planetchoice2
+    end
+  end
+end
+
+def planetchoice2
+    puts "You must decide where you would like to go next"
+    puts "Do you decide to land on planet Erlang, save saturn or do you wish to visit planet Earth?"
+
+    prompt;
+    choice = $stdin.gets.chomp
+
+    if choice.include?("Erlang") || choice.include?("erlang")
+        erlang
+        elsif choice.include?("Earth") || choice.include?("earth")
+        earth
+        elsif choice.include?("Saturn") || choice.include?("saturn")
+        saturn
+        else
+        dead("You float around aimlessly in space and run out of oxygen, and die.")
+    end
 end
 
 def nostart
@@ -140,10 +189,10 @@ end
 def start
     puts "Welcome to planet Wars. An epic adventure where you have to save the solar system planet by planet."
     puts "Your task is to save all the planets before you run out of lives, are you ready to give it a go?"
-    
+
     prompt;
     choice = $stdin.gets.chomp
-    
+
     if choice.include?("Yes") || choice.include?("yes")
         planetchoice
         elsif choice.include?("No") || choice.include?("no")
@@ -155,6 +204,3 @@ end
 
 
 start
-
-
-  
