@@ -75,20 +75,24 @@ end
 
 def planetchoice
     puts "You must first decide which planet to save"
-    puts "Do you decide to land on planet Erlang, save saturn or do you remain on planet Earth?"
+    puts "Do you decide to land on planet Erlang, save Saturn or do you remain on planet Earth?"
     puts "Or would you like to go explore Jupiter? "
-
+    puts "Or would you be brave enought to prevent the Colonization of Mars? "
+    
     prompt;
-    choice = $stdin.gets.chomp
+    # converting input string to lowercase
+    choice = $stdin.gets.chomp.downcase
 
-    if choice.include?("Erlang") || choice.include?("erlang")
+    if choice.include?("erlang") 
         erlang
-        elsif choice.include?("Earth") || choice.include?("earth")
+        elsif choice.include?("earth") 
         earth
-        elsif choice.include?("Saturn") || choice.include?("saturn")
+        elsif choice.include?("saturn") 
         saturn
-      elsif choice.include?("Jupiter") || choice.include?("jupiter")
+        elsif choice.include?("jupiter") 
         jupiter
+        elsif choice.include?("mars") 
+        mars
         else
         dead("You float around aimlessly in space and run out of oxygen, and die.")
     end
@@ -100,11 +104,12 @@ def saturn
     puts "Your job if you choose to save this planet is to save the rings of Saturn. Do you accept?"
 
     prompt;
-    savesaturn = $stdin.gets.chomp
+    # converting input string to lowercase
+    savesaturn = $stdin.gets.chomp.downcase
 
-    if savesaturn.include?("Yes") || savesaturn.include?("yes")
+    if savesaturn.include?("yes") 
         saturnrings
-        elsif savesaturn.include?("No") || savesaturn.include?("no")
+        elsif savesaturn.include?("no") 
         planetchoice
         else
         dead ("You could not decided if saturn should be saved and therefore ran out of oxygen. You die")
@@ -147,18 +152,52 @@ def jupiter
   end
 end
 
+
+#mission to Mars
+def mars
+    puts "Welcome to the Red Planet. Mars is the most Earth-Like of all the planets. Russia is planning to colonise Mars. You must act fast!"
+    sleep 2 #seconds
+    puts "We understand that you had a hard time entering space and landing on Mars. Just stay focused... Crater sand buries you while you are getting distracted."
+    sleep 2 #seconds
+    puts "You'll be presented with two questions at once. We know, this is a poor timing, but please answer immediately."
+    sleep 2 #seconds
+    puts "Is there a water on Mars ? Is a day on Mars is longer than one on Earth ? [yes/no]" 
+   
+  
+    
+    prompt;
+    # converting input string to lowercase
+    answermars = $stdin.gets.chomp.downcase
+    
+    if answermars.include?("yes")
+        marswinner
+        elsif answermars.include?("no")
+        dead ("That is not exactly true. You did not know that water on Mars is frozen in the ground, and a day on Mars is longer than one on Earth. It is time to die.")
+        else
+        planetchoice
+    end
+end
+
+def marswinner
+    puts "Congratulations for being so focused throughout."
+    sleep 2 #seconds
+    puts "Your children would live in piece on an independent Mars."
+    planetchoice2     
+end
+
 def planetchoice2
     puts "You must decide where you would like to go next"
-    puts "Do you decide to land on planet Erlang, save saturn or do you wish to visit planet Earth?"
+    puts "Do you decide to land on planet Erlang, save Saturn or do you wish to visit planet Earth?"
 
     prompt;
-    choice = $stdin.gets.chomp
+    # converting input string to lowercase
+    choice = $stdin.gets.chomp.downcase
 
-    if choice.include?("Erlang") || choice.include?("erlang")
+    if choice.include?("erlang") 
         erlang
-        elsif choice.include?("Earth") || choice.include?("earth")
+        elsif choice.include?("earth") 
         earth
-        elsif choice.include?("Saturn") || choice.include?("saturn")
+        elsif choice.include?("saturn") 
         saturn
         else
         dead("You float around aimlessly in space and run out of oxygen, and die.")
@@ -191,11 +230,12 @@ def start
     puts "Your task is to save all the planets before you run out of lives, are you ready to give it a go?"
 
     prompt;
-    choice = $stdin.gets.chomp
+    # converting input string to lowercase
+    choice = $stdin.gets.chomp.downcase
 
-    if choice.include?("Yes") || choice.include?("yes")
+    if choice.include?("yes") 
         planetchoice
-        elsif choice.include?("No") || choice.include?("no")
+        elsif choice.include?("no") 
         nostart
         else
         dead("None starters get nowhere, answer yes or no next time")
