@@ -17,11 +17,12 @@ def earth
 
     while true
         prompt;
-        choice2 = $stdin.gets.chomp
+        # converting input string to lowercase
+        choice2 = $stdin.gets.chomp.downcase
 
-        if choice2.include?("Earth") || choice2.include?("earth")
+        if choice2.include?("earth") 
             flood
-            elsif choice2.include?("Erlang") || choice2.include?("erlang")
+            elsif choice2.include?("erlang") 
             puts "That's another £150,000 to pay out - you end up selling all of your assets, house and family treasures"
             erlang
             else
@@ -39,14 +40,15 @@ def erlang
     puts "What do you give them as a gift, your monkey or the apples"
 
     prompt;
-    gift = $stdin.gets.chomp
+    # converting input string to lowercase
+    gift = $stdin.gets.chomp.downcase
 
-    if gift.include?("monkey") || gift.include?("Monkey")
+    if gift.include?("monkey") 
         puts "How could you give away your best friend Reece!  You animal!!"
         puts "The Erlangers are surprised at your ruthlessness and place you in their jails where you die"
         puts "The monkey lives happily in luxury amongst them."
 
-        elsif gift.include?("apples") || gift.include?("Apples") || gift.include?("apple") || gift.include?("Apple")
+        elsif gift.include?("apples") || gift.include?("apple")
         puts "How many apples do you give them?"
 
 
