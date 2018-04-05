@@ -120,9 +120,23 @@ end
 
 def saturnrings
     puts "You made a brave choice to save the rings of saturn"
+    sleep 2 #seconds
     puts "I hope you packed your spacesuit, to save the rings of Saturn you must orbit the planet along the rings"
     puts "Unlike earth Saturn has many moons so watch out they don't hit you"
+    sleep 3 #seconds
+    puts "Your riding the rings of Saturn and the moons are coming try and hit them off"
+    sleep 5 #seconds
+    moon_hits
+end
 
+def moon_hits
+    generated_number= rand(10)
+    if generated_number <= 5
+        puts "You only got hit by #{generated_number} moons, nice work you've saved Saturn... which Planet will you save next?"
+        planetchoice2
+    else
+    dead("The moons are coming hard and fast... you've been hit by #generated_number moons, your space suit is disintegrating and your oxygen has run out")
+    end
 end
 
 def jupiter
@@ -139,7 +153,7 @@ def jupiter
   sleep 2
 
   while true
-    print ">"
+    prompt;
     option = $stdin.gets.chomp
 
     if option.include?('1')
@@ -148,6 +162,7 @@ def jupiter
       puts "Really? Who is that going to truly help?"
     elsif option.include?('3')
       puts "Aren't you smart for bringing that with you? Lucky you."
+      planetchoice2
     else
       planetchoice2
     end
