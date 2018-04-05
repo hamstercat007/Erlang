@@ -135,22 +135,23 @@ def moon_hits
         puts "You only got hit by #{generated_number} moons, nice work you've saved Saturn... which Planet will you save next?"
         planetchoice2
     else
-    dead("The moons are coming hard and fast... you've been hit by #generated_number moons, your space suit is disintegrating and your oxygen has run out")
+    dead("The moons are coming hard and fast... you've been hit by #{generated_number} moons, your space suit is disintegrating and your oxygen has run out")
     end
 end
 
 def jupiter
   puts "Well done for being awesome in picking Jupiter"
   puts "Looks like you've brought more than sweat to this planet, what is that smell...."
-  sleep 2
+  sleep 3 #seconds
   puts "yes yes, I'm being funny, since you've arrived on the gas giant, get it? No? Google it when you get back, if you get back muhaha"
+  sleep 3 #seconds
   puts "How do you wish to proceed in this smelly environment (bear in mind, you may not be able to breathe soon)"
   puts "Option 1: Attack with stink bombs"
-  sleep 2
+  sleep 2 #seconds
   puts "Option 2: Run around screaming that you can't breathe"
-  sleep 2
+  sleep 2 #seconds
   puts "Or Option 3: Use the gas mask you managed to remember to bring with you"
-  sleep 2
+  sleep 2 #seconds
 
   while true
     prompt;
@@ -173,11 +174,11 @@ end
 #mission to Mars
 def mars
     puts "Welcome to the Red Planet. Mars is the most Earth-Like of all the planets. Russia is planning to colonise Mars. You must act fast!"
-    sleep 2 #seconds
+    sleep 3 #seconds
     puts "We understand that you had a hard time entering space and landing on Mars. Just stay focused... Crater sand buries you while you are getting distracted."
-    sleep 2 #seconds
+    sleep 3 #seconds
     puts "You'll be presented with two questions at once. We know, this is a poor timing, but please answer immediately."
-    sleep 2 #seconds
+    sleep 3 #seconds
     puts "Is there a water on Mars ? Is a day on Mars is longer than one on Earth ? [yes/no]" 
    
   
@@ -205,7 +206,6 @@ end
 def planetchoice2
     puts "You must decide where you would like to go next"
     puts "Do you decide to land on planet Erlang, save Saturn or do you wish to visit planet Earth?"
-
     prompt;
     # converting input string to lowercase
     choice = $stdin.gets.chomp.downcase
