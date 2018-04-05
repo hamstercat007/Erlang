@@ -205,7 +205,7 @@ end
 
 def planetchoice2
     puts "You must decide where you would like to go next"
-    puts "Do you decide to land on planet Erlang, save Saturn or do you wish to visit planet Earth?"
+    puts "Would you like to go save planet Erlang, save Saturn, jump onto jupiter, mount mars or return to planet Earth?"
     prompt;
     # converting input string to lowercase
     choice = $stdin.gets.chomp.downcase
@@ -216,6 +216,10 @@ def planetchoice2
         earth
         elsif choice.include?("saturn") 
         saturn
+        elsif choice.include?("mars")
+        mars
+        elsif choice.include? ("jupiter")
+        jupiter
         else
         dead("You float around aimlessly in space and run out of oxygen, and die.")
     end
